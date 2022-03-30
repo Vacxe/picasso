@@ -8,6 +8,8 @@ android {
   defaultConfig {
     minSdkVersion versions.minSdk
     consumerProguardFiles 'consumer-proguard-rules.txt'
+
+    testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
   }
 
   compileOptions {
@@ -41,6 +43,11 @@ dependencies {
   testImplementation deps.robolectric
   testImplementation deps.mockito
   testImplementation deps.mockWebServer
+
+  androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+  androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+  androidTestImplementation 'androidx.test:rules:1.4.0'
+  androidTestImplementation deps.truth
 }
 
 spotless {
